@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traversing</title>
+</head>
+<body>
+    <!-- // array traversig and accessing
+// traversing ka matlab ak ak element ko checkout krna
+// accessing means access any specific element
+
+// operations of datastructures
+// traversing
+// insertion
+// deletion
+// seaarching
+// sorting
+// merging -->
+
+<input type="text" name="" id="input">
+<button onclick="getElement()">Get element</button>
+
+
+
+<script>
+    let data=[9,10,34,45,65,78,98,56,65,75,85,98,35,34,78,45]
+    // length counting start with 1 
+    // for(let i=0;i<data.length;i++){
+    //     document.write(`Array ${i} ${data[i]} <br>`);
+    // }
+    // let x=3;
+    // document.write(data[x])
+
+
+    function getElement(){
+        // getting index of array
+        let val=document.getElementById("input").value
+        if(val<data.length && typeof parseInt(val)==="number"){
+         alert(data[val])
+
+         }else{
+            alert("Plz enter valid input");
+         }
+        // alert(val)
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+
+   
+
+   <script>
+      let data=[1,2,3,4,5,6,7,8,9]
+let temp;
+function reverseArray(data,start,end){
+    console.log(data)
+    if(start<=end){
+    temp=data[start]
+    data[start]=data[end]
+    data[end]=temp
+      reverseArray(data,start + 1,end - 1)
+   }
+}
+console.log(data)
+
+
+reverseArray(data,0,data.length-1)
+   </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion</title>
+</head>
+<body>
+    
+
+    <script>
+        // function apple(x){
+        //     console.log(x)
+        //  if(x<15){
+        //      apple(x+1);
+        //  }
+        // }
+        //  let data=0;
+        //  console.log("first call")
+        // apple(data);
+      
+        // find factorial
+        // let answer=1;
+        // function factorial(x){
+        //     console.log(x)
+        //     if(x>=1){
+        //       answer*=x;
+        //     factorial(x-1)
+        //   }
+        // }
+        //  let data=10
+        // factorial(data)
+        // console.log("answer",answer)
+
+        // find factorial second way
+        function factorial(item){
+           if(item==0){
+            return 1;
+           }
+           return item*factorial(item-1)
+        }
+
+
+        let data=5;
+        console.log(factorial(data))
+    </script>
+</body>
+</html>

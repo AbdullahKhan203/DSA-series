@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching</title>
+    <script>
+        //  let data=[9,10,34,45,65,78,98];
+        //  let searchElem=34;
+        //  let index=undefined
+        //  for(let i=0;i<=data.length-1;i++){
+        //     if(searchElem==data[i]){
+        //          index=i
+        //          break;
+        //     }
+        //  } 
+        //  console.log("index",index);
+        let data=[9,10,34,45,65,78,98];
+        let index=undefined;
+        function searchElem(){
+            let searchElem=document.getElementById("element").value
+            for(let i=0;i<=data.length-1;i++){
+            if(parseInt(searchElem)===data[i]){
+                 index=i
+                 break;
+            }
+         } 
+
+         console.log("index",index);
+        }
+                        // default functions
+        // by default function for find array's element's index in array
+        // console.log("by default function for find: ",data.indexOf(78))
+        // by default function for delete array's element's index in array
+        // console.log("by default function for delete ",data.splice(2,1))
+        // console.log(data)
+
+        
+         
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="element">
+    <button onclick="searchElem()">Search Element</button>
+</body>
+</html>

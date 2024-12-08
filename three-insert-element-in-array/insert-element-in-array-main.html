@@ -1,0 +1,148 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert element in array</title>
+    <script>
+        //  let data=[9,10,34,45,65,78,98];
+        //  let newEl=70     //insert at position 2
+        //  let position=2;
+        //   console.warn(data)
+
+        //  for(i=data.length-1;i>=0;i--){
+        //     //  console.warn(i);
+        //     //  console.warn(data[i]);
+        //     if(i>=position){
+        //         data[i+1]=data[i]
+        //         if(i==position){
+        //             data[i]=newEl
+        //         }
+                
+        //     }
+             
+        //  }
+        // console.warn(data)
+
+        function insertElement(){
+            let data=[9,10,34,45,65,78,98];
+            let position=document.getElementById("position").value
+            position=parseInt(position)
+            const numberPattern = /^[0-9]*$/;
+             if(!numberPattern.test(position)){
+                return alert("enter the valid position");
+             }
+
+
+
+              let newEl=document.getElementById("element").value     //insert at position 2
+              newEl=parseInt(newEl)
+              if(!numberPattern.test(newEl)){
+                return alert("enter the valid element");
+             }
+                
+             
+          console.warn(data)
+
+         for(i=data.length-1;i>=0;i--){
+            //  console.warn(i);
+            //  console.warn(data[i]);
+            if(i>=position){
+                data[i+1]=data[i]
+                if(i==position){
+                    data[i]=newEl
+                }
+                
+            }
+             
+         }
+        console.warn(data)
+        }
+
+    //    let a=a;
+    //    console.log(typeof (a));
+        
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="position" placeholder="enter position">
+    <input type="text" name="" id="element" placeholder="enter element">
+    <button onclick="insertElement()">Insert</button>
+
+
+
+</body>
+</html> -->
+
+
+
+
+
+<!--Q1: make a new array and insert/delete/traverse new element in array without default function?  -->
+<!--Q2: How to make reverse loop?  -->
+<!--Q2: By default functoin to insert element in js?  -->
+
+
+
+
+
+
+<!-- practice by myself -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function insertElement(){
+            let arr=[0,10,20,30,40,50,60,70,80,90]
+             let position=document.getElementById("position").value
+             position=parseInt(position)
+             const numberPattern = /^[0-9]*$/;
+             if(!numberPattern.test(position)){
+               return alert("plz enter valid value")
+             }
+             console.log("position",position);
+             
+
+
+
+
+             let element=document.getElementById("element").value
+             element=parseInt(element)
+             if(!numberPattern.test(element)){
+                return alert("plz enter valid element")
+             }
+
+                
+             for(i=arr.length-1;i>=0;i--){
+                  console.log("iteration",i);
+                  
+                  if(i>=position){
+                    arr[i+1]=arr[i]
+                  }
+                }
+                arr[position]=element
+                
+                  
+
+               
+             console.log("final arr is",arr)
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="position" placeholder="position">
+    <input type="text" name="" id="element" placeholder="element">
+    <button onclick="insertElement()">Insert</button>
+    
+</body>
+</html>
+

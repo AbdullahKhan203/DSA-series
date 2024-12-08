@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET</title>
+</head>
+<body>
+    <script>
+        let data=new Set(["ali","ahmad","ali"])
+        let arr=["ali","ahmad","ali"]
+        data.add("hassan")
+        // data.add({"test":"test@test.com"})
+        // console.log(data.has("hassan"))
+        //  console.log(data.size)
+        // for delete single value
+        data.delete("ali")
+        // for clear the Set
+        //  data.clear()
+         console.log(data)
+        console.log(arr)
+
+
+        // for(x of data){
+        //     console.log(x)
+        // }
+
+        // data.forEach((val)=>{
+        //     console.log(val)
+        // })
+        console.log(data.values())
+        console.log(data.keys())
+        console.log(data.entries())
+
+
+
+        // diff b/w map and set
+        // map is similar to object but diff is for keys that object store key only as string and map store key is form of any data type
+        // set is same as array but it has no duplicate values and has different functions.
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deletion </title>
+    <script>
+        //   with out dynamic deletion
+        // let data=[9,10,34,45,65,78,98];
+        // let position=3;
+        // for(i=0 ; i<data.length ; i++){
+        //     if(i==position){
+        //         data[i]=undefined
+        //     }
+        //     if(i>position){
+        //         data[i-1]=data[i]
+        //     }
+        // }
+        // data.length=data.length-1
+        // console.log(data);
+        //  another case
+        // for(i=position;i<data.length-1;i++){
+        //       data[i]=data[i+1]
+        // }
+        // data.length=data.length-1
+        // console.log(data);
+
+        let data=[9,10,34,45,65,78,98];
+        console.log("data before deletion",data);
+        
+        function deleteElement(){
+        let position=document.getElementById("position").value;
+            position=parseInt(position)
+        const numberPattern = /^[0-9]*$/;
+             if(!numberPattern.test(position)){
+                return alert("enter the valid position");
+             }
+        for(i=0 ; i<data.length ; i++){
+            if(i==position){
+                data[i]=undefined
+            }
+            if(i>position){
+                data[i-1]=data[i]
+            }
+        }
+        data.length=data.length-1
+        console.log(data);
+        }
+             
+        
+    </script>
+</head>
+<body>
+    <input type="text" id="position">
+    <!-- <input type="text" id="element"> -->
+    <button onclick="deleteElement()">Delete</button>
+</body>
+</html>
