@@ -105,7 +105,8 @@
              let position=document.getElementById("position").value
              position=parseInt(position)
              const numberPattern = /^[0-9]*$/;
-             if(!numberPattern.test(position)){
+            //  if(!numberPattern.test(position)){
+             if(isNaN(position)){
                return alert("plz enter valid value")
              }
              console.log("position",position);
@@ -116,7 +117,8 @@
 
              let element=document.getElementById("element").value
              element=parseInt(element)
-             if(!numberPattern.test(element)){
+            //  if(!numberPattern.test(element)){
+             if(isNaN(element)){
                 return alert("plz enter valid element")
              }
 

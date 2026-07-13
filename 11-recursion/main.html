@@ -9,17 +9,18 @@
     
 
     <script>
+        // for printing number
         // function apple(x){
         //     console.log(x)
-        //  if(x<15){
+        //  if(x<20){
         //      apple(x+1);
         //  }
         // }
         //  let data=0;
         //  console.log("first call")
         // apple(data);
-      
-        // find factorial
+           
+        // find factorial with memory usage.
         // let answer=1;
         // function factorial(x){
         //     console.log(x)
@@ -32,7 +33,7 @@
         // factorial(data)
         // console.log("answer",answer)
 
-        // find factorial second way
+        // find factorial second way without memory usage
         function factorial(item){
            if(item==0){
             return 1;
@@ -43,6 +44,12 @@
 
         let data=5;
         console.log(factorial(data))
+        // factorial(item):-factrial(5)=>5*factirial(4)=>4*factorial(3)=>3*factorial(2)=>2*factorial(1)
+        // 1*2
+        // 3*2=6
+        // 4*6=24
+        // 5*24
+
     </script>
 </body>
 </html>

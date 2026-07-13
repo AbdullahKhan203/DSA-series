@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let data=[];
+        let currentSize=data.length;
+        function push(newVal){
+          data[currentSize]=newVal;
+          currentSize+=1;
+          
+        }
+
+        function pop(){
+            let lastRemovedItem=data[currentSize-1]
+         currentSize-=1;
+          data.length=currentSize;
+          return lastRemovedItem
+        }
+
+        function reverseStr(str){
+           for(let i=0;i<str.length;i++){
+             push(str[i])
+           }
+           for(let i=0;i<str.length;i++){
+                 str[i]=pop()
+
+
+           }
+
+        }
+
+       let str="ali";
+       str=str.split("")
+       reverseStr(str)
+       console.log(str.join(""))
+    </script>
+</body>
+</html>

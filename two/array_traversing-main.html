@@ -36,6 +36,9 @@
     function getElement(){
         // getting index of array
         let val=document.getElementById("input").value
+        console.log(typeof val)
+        // better code
+        // if (!isNaN(index) && index >= 0 && index < data.length) {
         if(val<data.length && typeof parseInt(val)==="number"){
          alert(data[val])
 
@@ -48,3 +51,95 @@
 </script>
 </body>
 </html>
+
+
+<!-- questions -->
+<!-- how this code
+val < data.length
+know that a is smaller then data.length and declare this condition false -->
+<!-- ### **How Does `val < data.length` Work When `val` is `"a"`?**  
+
+Let's break it down step by step.  
+
+---
+
+### **Step 1: Understanding `val < data.length`**  
+```js
+val < data.length
+```
+- `val` comes from `document.getElementById("input").value`.  
+- If the user enters `"a"`, then:  
+  ```js
+  val = "a"; // val is a string
+  ```
+- `data.length` is `16` (because the array has 16 elements).  
+- The condition becomes:  
+  ```js
+  "a" < 16
+  ```
+
+---
+
+### **Step 2: Type Conversion in JavaScript**  
+In JavaScript, when comparing a **string** with a **number** (`"a" < 16`), JavaScript attempts **type coercion**:  
+- It **tries** to convert `"a"` into a number using `Number("a")`.  
+- Since `"a"` is **not** a numeric string, `Number("a")` results in **NaN** (Not-a-Number).  
+- Now, the condition is:  
+  ```js
+  NaN < 16
+  ```
+
+---
+
+### **Step 3: Behavior of `NaN` in Comparisons**  
+In JavaScript:  
+- **Any comparison involving `NaN` always results in `false`.**  
+- So,  
+  ```js
+  NaN < 16  // false
+  ```
+
+---
+
+### **Step 4: Final Evaluation**  
+Since `"a"` becomes `NaN`, and `NaN < 16` is **false**, the condition:  
+```js
+val < data.length
+```
+becomes **false**, and the `else` block runs.
+
+---
+
+### **Example Demonstration in Console**  
+You can test this behavior in the browser console:  
+```js
+console.log("a" < 16);  // false
+console.log(Number("a"));  // NaN
+console.log(NaN < 16);  // false
+console.log(NaN > 16);  // false
+console.log(NaN == 16); // false
+console.log(NaN === NaN); // false (special case)
+```
+
+---
+
+### **Conclusion**  
+- JavaScript **tries to convert `"a"` to a number** before comparing.  
+- It fails and returns `NaN`.  
+- **Any comparison with `NaN` is always `false`**, so the condition fails.  
+
+✅ **That's why `"a" < data.length` evaluates to `false`!** -->
+
+
+<!-- so better code is ```
+ function getElement() {
+    let val = document.getElementById("input").value;
+    let index = parseInt(val, 10); // Convert to integer
+
+    if (!isNaN(index) && index >= 0 && index < data.length) {
+        alert(data[index]);
+    } else {
+        alert("Plz enter valid input");
+    }
+}
+``` -->

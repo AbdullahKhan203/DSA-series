@@ -12,26 +12,99 @@
 
 
     <script>
-        function colors(){
-            let data=20;
-            console.log(data)
-            if(true){
-                console.log(data*20)
-            }else{
-                console.log(data/20)
+        // function colors(){
+        //     console.log("colors runniing");
+        //     let data=20;
+        //     console.log(data)
+        //     if(true){
+        //         console.log(data*20)
+        //     }else{
+        //         console.log(data/20)
+        //     }
+        // }
+        // function days(){
+        //     console.log("days runniing");
+        //     colors()
+        // }
+        // function fruits(){
+        //     console.log("fruits runniing");
+        //     days()
+        // }
+
+        // function topFunction(){
+        //     console.log("topFunction runniing");
+        //     fruits()
+        // }
+        // topFunction();
+
+        // other example of tail recursion
+        function tailRecursion(n,accumulator=1){
+            if(n==1 || n==0){
+                return accumulator;
             }
-        }
-        function days(){
-            colors()
-        }
-        function fruits(){
-            days()
+
+            return tailRecursion(n-1, n*accumulator)
         }
 
-        function topFunction(){
-            fruits()
-        }
-        topFunction();
+        console.log(tailRecursion(10))
+// in tail computation first and then recursion.
+        // factorialTailRecursive(5, 1)
+//   -> factorialTailRecursive(4, 5)
+//     -> factorialTailRecursive(3, 20)
+//       -> factorialTailRecursive(2, 60)
+//         -> factorialTailRecursive(1, 120)
+//           -> return 120
+
+function fibonacciHeadRecursive(n) {
+  if (n <= 1) {
+    return n;
+  }
+  return fibonacciHeadRecursive(n - 1) + fibonacciHeadRecursive(n - 2); // Head-recursive calls
+}
+console.log(fibonacciHeadRecursive(6)); // Output: 8
+
+// fibonacciHeadRecursive(6)
+//   -> fibonacciHeadRecursive(5) + fibonacciHeadRecursive(4)
+//     -> fibonacciHeadRecursive(4) + fibonacciHeadRecursive(3)
+//       -> fibonacciHeadRecursive(3) + fibonacciHeadRecursive(2)
+//         -> fibonacciHeadRecursive(2) + fibonacciHeadRecursive(1)
+//           -> fibonacciHeadRecursive(1) + fibonacciHeadRecursive(0)
+//             -> 1 + 0 = 1
+//           -> 1 + 1 = 2
+//         -> 2 + 1 = 3
+//       -> 3 + 2 = 5
+//     -> 5 + 3 = 8
+// 
+
+// This creates a binary tree of recursive calls. Here’s how the tree looks for fibonacciHeadRecursive(6)
+//                           fib(6)
+//                          /      \
+//                   fib(5)        fib(4)
+//                  /      \       /      \
+//             fib(4)     fib(3) fib(3)   fib(2)
+//            /      \    /      \ /      \
+//       fib(3)  fib(2) fib(2) fib(1) fib(2) fib(1)
+//      /      \  /      \
+// fib(2) fib(1) fib(1) fib(0)
+//  /      \
+// fib(1) fib(0)
+// The total number of nodes in the tree is approximately 2^n, leading to exponential time complexity: O(2^n).
+// To optimize, use memoization or an iterative approach to avoid redundant calculations.
+function fibonacciTailRecursive(n, a = 0, b = 1) {
+  if (n === 0) {
+    return a;
+  }
+  if (n === 1) {
+    return b;
+  }
+  return fibonacciTailRecursive(n - 1, b, a + b); // Tail-recursive call
+}
+
+console.log(fibonacciTailRecursive(6)); // Output: 8
+
+
+
+
     </script>
 </body>
 </html>

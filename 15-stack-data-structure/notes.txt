@@ -1,0 +1,7 @@
+In DSA, stacks are usually implemented as:
+
+Array-based Stack (fixed-size, simple).
+Linked List-based Stack (dynamic, flexible).
+Min Stack (tracks minimum values).
+Double-ended Stack (Deque) (operations on both ends).
+Circular Stack (wraps around like a buffer).

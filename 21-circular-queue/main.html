@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>circular-queue-20</title>
+  </head>
+  <body>
+    <script>
+      class Queue {
+        constructor(size) {
+          this.max = size;
+          this.items = new Array(size);
+          this.currentSize = 0;
+          this.rear = -1;
+          this.front = -1;
+        }
+        enqueue(val) {
+          if (this.currentSize != this.max) {
+            if (this.rear == this.max - 1) {
+              this.rear = 0;
+            } else {
+              this.rear++;
+            }
+            this.items[this.rear] = val;
+            this.currentSize++;
+            if ((this.front == -1)) {
+              this.front = this.rear;
+            }
+          }
+        }
+        dequeue(){
+            if(this.currentSize!=0){
+                this.items[this.front]=null;
+                if(this.front==this.max-1){
+                    this.front=0;
+                }else{
+                    this.front++;
+                }
+                this.currentSize--;
+                
+            }else{
+                this.front=-1;
+                this.rear=-1;
+                alert("queue is empty")
+            }
+        }
+      }
+
+      let queue = new Queue(5);
+
+
+
+
+
+
+
+
+
+
+
+      // by chatgpt
+      class CircularQueue {
+    constructor(size) {
+        this.queue = new Array(size); // Fixed size array
+        this.size = size;
+        this.front = -1; // Front pointer
+        this.rear = -1; // Rear pointer
+    }
+
+    isFull() {
+        return (this.rear + 1) % this.size === this.front;
+    }
+
+    isEmpty() {
+        return this.front === -1;
+    }
+
+    enqueue(value) {
+        if (this.isFull()) {
+            console.log("Queue is full");
+            return false;
+        }
+
+        if (this.isEmpty()) {
+            this.front = 0; // Initialize front
+        }
+
+        this.rear = (this.rear + 1) % this.size;
+        this.queue[this.rear] = value;
+        return true;
+    }
+
+    dequeue() {
+        if (this.isEmpty()) {
+            console.log("Queue is empty");
+            return false;
+        }
+
+        const removedValue = this.queue[this.front];
+        if (this.front === this.rear) {
+            // Queue becomes empty
+            this.front = this.rear = -1;
+        } else {
+            this.front = (this.front + 1) % this.size;
+        }
+
+        return removedValue;
+    }
+
+    display() {
+        if (this.isEmpty()) {
+            console.log("Queue is empty");
+            return;
+        }
+
+        let i = this.front;
+        let result = [];
+        while (true) {
+            result.push(this.queue[i]);
+            if (i === this.rear) break;
+            i = (i + 1) % this.size;
+        }
+
+        console.log("Queue:", result.join(" "));
+    }
+}
+
+// Example usage:
+const cq = new CircularQueue(5);
+cq.enqueue(10);
+cq.enqueue(20);
+cq.enqueue(30);
+cq.display(); // Queue: 10 20 30
+cq.dequeue();
+cq.display(); // Queue: 20 30
+cq.enqueue(40);
+cq.enqueue(50);
+cq.enqueue(60);
+cq.display(); // Queue: 20 30 40 50 60
+cq.enqueue(70); // Queue is full
+
+    </script>  </body>
+</html>
